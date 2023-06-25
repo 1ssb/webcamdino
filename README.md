@@ -10,5 +10,5 @@ Kindly report any systemic issues to Subhransu.Bhattacharjee@anu.edu.au
 
 If you find it useful, you may cite it as: 
 
-S. S. Bhattacharjee (2023) "Webcamdinov2: Video inferencing with Webcam using Dinov2", Retrieved from Github.com
+S. S. Bhattacharjee (2023) "Webcamdinov2: Video inferencing with Webcam using Dinov2", Retrieved from github.com
 
