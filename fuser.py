@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # Code by 1ssb on github
 
+import ffmpeg
 import os
 os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = '/home/users/u7143478/anaconda3/envs/dinov2/plugins'
 from signal import signal, SIGPIPE, SIG_DFL
@@ -106,7 +107,12 @@ def main():
     final_clip.write_videofile('/home/users/u7143478/Desktop/dinov2/final_film.mp4')
     print("Video created---Cleaning up!")
     os.remove('/home/users/u7143478/Desktop/dinov2/feature_film.mp4')
-    os.remove('/home/users/u7143478/Desktop/dinov2/capture_film.mp4')
+    os.remove('/home/users/u7143478/Desktop/dinov2/capture_film.mp4')    
+    video_path = '/home/users/u7143478/Desktop/dinov2/final_film.mp4'
+    with VideoFileClip(video_path) as video:
+        video_clip = video.subclip(0, 10)
+        video_clip.write_videofile("output.mp4")
+    output_path = "/home/users/u7143478/Desktop/dinov2/output.mp4" 
     print("Final Film captured!")
 if __name__ == '__main__':
     main()
