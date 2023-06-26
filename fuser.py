@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # Code by 1ssb on github
 
-import ffmpeg
 import os
 os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = '/home/users/u7143478/anaconda3/envs/dinov2/plugins'
 from signal import signal, SIGPIPE, SIG_DFL
@@ -30,9 +29,9 @@ def capture_images(c, s=0.1, t=5, folder='images'):
     except Exception as e:
         print('Error: Could not open camera {}: {}'.format(c, e))
         return
-    print("Enter 'c' if you are ready to record for {} seconds".format(t))
+    print("Enter 'r' if you are ready to record for {} seconds".format(t))
     key = input()
-    if key != 'c':
+    if key != 'r':
         return
     start_time = time.time()
     for _ in tqdm(range(int(t/s)), desc="Capturing Images"):
