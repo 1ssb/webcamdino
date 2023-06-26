@@ -113,6 +113,7 @@ def main():
         video_clip = video.subclip(0, 10)
         video_clip.write_videofile("output.mp4")
     output_path = "/home/users/u7143478/Desktop/dinov2/output.mp4" 
-    print("Final Film captured!")
+    os.remove('/home/users/u7143478/Desktop/dinov2/final_film.mp4')
+    print("Final Film captured as output! Ignore the Abort error. It's a bug in how Dinov2 works in this env.")
 if __name__ == '__main__':
     main()
