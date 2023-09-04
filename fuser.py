@@ -88,8 +88,8 @@ def main():
             destination_path = os.path.join(destination_folder, filename.replace('.jpg', '_feature.jpg'))
             extract_features(image_path, destination_path)
     print("Images processed. Preparing to create videos...")   
-    images_to_video('/home/users/u7143478/Desktop/dinov2/features', '/home/users/u7143478/Desktop/dinov2/feature_film.mp4', s)
-    images_to_video('/home/users/u7143478/Desktop/dinov2/capture', '/home/users/u7143478/Desktop/dinov2/capture_film.mp4', s)
+    images_to_video('/home/users/xxxx/Desktop/dinov2/features', '/home/users/xxxx/Desktop/dinov2/feature_film.mp4', s)
+    images_to_video('/home/users/xxxx/Desktop/dinov2/capture', '/home/users/xxxx/Desktop/dinov2/capture_film.mp4', s)
     print("Videos created. Cleaning up...")
     for filename in os.listdir(destination_folder):
         file_path = os.path.join(destination_folder, filename)
@@ -100,19 +100,19 @@ def main():
         os.remove(file_path)
     os.rmdir(folder)
     print("Concatenating videos...")
-    feature_clip = VideoFileClip('/home/users/u7143478/Desktop/dinov2/feature_film.mp4')
-    capture_clip = VideoFileClip('/home/users/u7143478/Desktop/dinov2/capture_film.mp4')
+    feature_clip = VideoFileClip('/home/users/xxxx/Desktop/dinov2/feature_film.mp4')
+    capture_clip = VideoFileClip('/home/users/xxxx/Desktop/dinov2/capture_film.mp4')
     final_clip = clips_array([[feature_clip, capture_clip]])
-    final_clip.write_videofile('/home/users/u7143478/Desktop/dinov2/final_film.mp4')
+    final_clip.write_videofile('/home/users/xxxx/Desktop/dinov2/final_film.mp4')
     print("Video created---Cleaning up!")
-    os.remove('/home/users/u7143478/Desktop/dinov2/feature_film.mp4')
-    os.remove('/home/users/u7143478/Desktop/dinov2/capture_film.mp4')    
-    video_path = '/home/users/u7143478/Desktop/dinov2/final_film.mp4'
+    os.remove('/home/users/xxxx/Desktop/dinov2/feature_film.mp4')
+    os.remove('/home/users/xxxx/Desktop/dinov2/capture_film.mp4')    
+    video_path = '/home/users/xxxx/Desktop/dinov2/final_film.mp4'
     with VideoFileClip(video_path) as video:
         video_clip = video.subclip(0, 10)
         video_clip.write_videofile("output.mp4")
-    output_path = "/home/users/u7143478/Desktop/dinov2/output.mp4" 
-    os.remove('/home/users/u7143478/Desktop/dinov2/final_film.mp4')
+    output_path = "/home/users/xxxx/Desktop/dinov2/output.mp4" 
+    os.remove('/home/users/xxxx/Desktop/dinov2/final_film.mp4')
     print("Final Film captured as output! Ignore the Abort error. It's a bug in how Dinov2 works in this env.")
 if __name__ == '__main__':
     main()
