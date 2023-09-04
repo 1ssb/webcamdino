@@ -2,7 +2,7 @@
 # Code by 1ssb on github
 
 import os
-os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = '/home/users/u7143478/anaconda3/envs/dinov2/plugins'
+os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = '/home/users/xxxxx/anaconda3/envs/dinov2/plugins'
 from signal import signal, SIGPIPE, SIG_DFL
 signal(SIGPIPE,SIG_DFL) 
 import time
